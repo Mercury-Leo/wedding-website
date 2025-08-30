@@ -20,6 +20,13 @@ body {
   background: #fff;
 }
 
+.italianno-regular {
+  font-family: "Italianno", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 #page {
   position: relative;
   overflow-x: hidden;
