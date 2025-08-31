@@ -1821,3 +1821,92 @@ form label {
 
 /*# sourceMappingURL=style.css.map */
 
+/* ---------- Responsive event card ---------- */
+
+/* Keep the card centered and constrained on all screens */
+.event-wrap {
+  max-width: 720px;          /* nice readable width on wide phones/tablets */
+  width: 100%;
+  margin: 0 auto;            /* center inside the column */
+  padding: 24px;             /* comfy inner padding */
+  box-sizing: border-box;
+}
+
+/* Stack the small info columns and center on mobile */
+.event-wrap .event-col {
+  width: 100%;
+  float: none;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Make the map responsive (modern browsers) */
+.event-wrap iframe {
+  width: 100% !important;
+  height: auto;
+  aspect-ratio: 4 / 3;       /* keeps a nice proportion */
+  border: 0;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Fallback for older browsers without aspect-ratio */
+.event-wrap .map-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;          /* 4:3 ratio (adjust if you prefer 56.25% for 16:9) */
+}
+.event-wrap .map-embed > iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure the outer layout never hugs the edges on small screens */
+@media (max-width: 768px) {
+  .col-sm-10.col-sm-offset-1,
+  .col-md-8.col-md-offset-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .event-wrap { padding: 20px; }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .event-wrap { padding: 16px; }
+  .event-wrap h3 { font-size: 22px; line-height: 1.2; }
+}
+
+/* Optional: if your page is RTL (Hebrew), ensure inside the card respects it */
+html[dir="rtl"] .event-wrap { direction: rtl; }
+
+/* --- Fix event section bleeding into the next section --- */
+
+/* Let the section grow with its content on all viewports */
+#fh5co-event {
+  height: auto !important;
+  padding: 7em 0 !important;   /* keep nice spacing top/bottom */
+  float: none !important;       /* no need to float the whole section */
+}
+
+/* Remove fixed heights from the inner table wrappers */
+#fh5co-event .display-t,
+#fh5co-event .display-tc {
+  height: auto !important;
+  display: block !important;    /* behave like normal block containers */
+}
+
+/* Safety: make sure inner floats can’t escape the card */
+#fh5co-event .event-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Optional: if the gallery is still too close, add a little top margin */
+#fh5co-gallery {
+  margin-top: 0 !important;     /* or try 2em if you want extra spacing */
+}
