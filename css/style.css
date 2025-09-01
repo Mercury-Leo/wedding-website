@@ -1916,3 +1916,33 @@ html[dir="rtl"] .event-wrap { direction: rtl; }
   justify-content: center; /* centers horizontally */
   margin-top: 20px;        /* optional spacing */
 }
+
+/* 1) A small utility you can reuse anywhere you use background-image */
+.bg-center-cover {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll; /* safer on mobile (esp. iOS) */
+}
+
+/* 2) Apply to your hero/first section that has the photo background */
+.hero, .banner, .home-cover, .page-header {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll;
+}
+
+/* 3) Ensure the hero has room to show the centered subject */
+.hero, .banner, .home-cover {
+  min-height: 60vh;              /* adjust as you like */
+  width: 100%;
+}
+
+/* 4) Prevent any stray padding/margin from nudging the image sideways */
+@media (max-width: 600px) {
+  .hero, .banner, .home-cover, .page-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
