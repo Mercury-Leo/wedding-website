@@ -56,6 +56,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
@@ -97,7 +98,25 @@
 							<div class="flipTimebox">
 								<div class="clock clock-fix"></div>
 							</div>
-							<p><a href="#fh5co-event" class="btn btn-default btn-sm">Save our date</a></p>
+							<div class="calendar-button-wrapper">
+								<add-to-calendar-button
+										name="חתונה של עדן ומרקורי"
+										description="מחכים לראותך!"
+										startDate="2026-02-12"
+										startTime="19:00"
+										endDate="2026-02-13"
+										endTime="01:00"
+										timeZone="Asia/Jerusalem"
+										location="ירוק על המים, Hulda, Israel"
+										availability="busy"
+										options="'Apple','Google','iCal','Outlook.com'"
+										buttonStyle="date"
+										hideBackground
+										size="6"
+										pastDateHandling="disable"
+								></add-to-calendar-button>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -149,22 +168,6 @@
 												ניווט
 											</a>
 										</div>
-
-										<button
-												id="addToCalendarBtn"
-												class="btn"
-												data-title="חתונה של עדן ומרקורי"
-												data-description="מחכים לראותכם בחתונה שלנו"
-												data-location="ירוק על המים, חולדה"
-												data-start="2026-02-12T19:00"
-												data-end="2025-02-12T((:00"
-												data-url="https://finnegan-b.art"
-												data-alarm-minutes="180"
-										>
-											➕ Add to calendar
-										</button>
-
-										<script src="js/calendar.js" defer></script>
 
 									</div>
 								</div>

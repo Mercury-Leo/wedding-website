@@ -1910,3 +1910,9 @@ html[dir="rtl"] .event-wrap { direction: rtl; }
 #fh5co-gallery {
   margin-top: 0 !important;     /* or try 2em if you want extra spacing */
 }
+
+.calendar-button-wrapper {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 20px;        /* optional spacing */
+}
