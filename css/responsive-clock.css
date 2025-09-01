@@ -189,3 +189,48 @@
   font-weight: bold !important;
   font-family: Sofia Sans Condensed !important; 
 }
+
+/* 1) Center the clock horizontally (and vertically if parent has height) */
+.flipTimebox {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center if container has height */
+  width: 100%;
+  padding-inline: 12px;
+  padding-top: 40px;         /* ⬅️ add top padding */
+  box-sizing: border-box;
+}
+
+/* 2) Let the plugin wrapper size to content and center inside the flex box */
+.flipTimebox .flip-clock-wrapper {
+  margin: 0 !important;        /* overrides the 4em margin */
+  width: max-content;           /* shrink to the clock’s intrinsic width */
+}
+
+/* 3) Make sure inner lists don’t push layout wider than the viewport */
+.flipTimebox .flip-clock-wrapper ul {
+  /* Keep your existing widths, but prevent overflow nudging */
+  max-width: 100%;
+}
+
+/* 4) Undo small offsets that were pushing it sideways on tiny screens */
+@media (max-width: 480px) {
+  .flipTimebox .flip-clock-wrapper { padding-left: 0; } /* was 5px */
+  .flipTimebox .flip-clock-dot { margin-left: 0; }      /* was negative */
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; } /* was negative */
+}
+@media (max-width: 360px) {
+  .flipTimebox .flip-clock-wrapper { padding-left: 0; }
+  .flipTimebox .flip-clock-dot { margin-left: 0; }
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; }
+}
+@media (max-width: 320px) {
+  .flipTimebox .flip-clock-wrapper { padding-left: 0; }
+  .flipTimebox .flip-clock-dot { margin-left: 0; }
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; }
+}
+
+/* Optional: keep some vertical breathing room around the clock, centered */
+.flipTimebox .clock.clock-fix {
+  margin: 1.5rem 0;  /* vertical only */
+}
