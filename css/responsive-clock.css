@@ -190,47 +190,53 @@
   font-family: Sofia Sans Condensed !important; 
 }
 
-/* 1) Center the clock horizontally (and vertically if parent has height) */
+/* --- Hard center the clock everywhere --- */
 .flipTimebox {
-  display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center if container has height */
+  display: grid;
+  place-items: center;       /* centers horizontally + vertically */
   width: 100%;
-  padding-inline: 12px;
-  padding-top: 40px;         /* ⬅️ add top padding */
+  padding-inline: 12px;      /* small side gutters on mobile */
+  padding-top: 48px;         /* requested top padding */
+  padding-bottom: 32px;      /* optional: consistent bottom space */
   box-sizing: border-box;
+  overflow-x: hidden;        /* avoids any tiny overflow nudges */
 }
 
-/* 2) Let the plugin wrapper size to content and center inside the flex box */
+/* Let the plugin wrapper size to its content and stay centered */
 .flipTimebox .flip-clock-wrapper {
-  margin: 0 !important;        /* overrides the 4em margin */
-  width: max-content;           /* shrink to the clock’s intrinsic width */
+  margin: 0 !important;      /* overrides the 4em margin */
+  width: max-content;         /* shrink-wrap to the clock’s width */
 }
 
-/* 3) Make sure inner lists don’t push layout wider than the viewport */
+/* Avoid layout push from fixed widths—don’t exceed viewport */
 .flipTimebox .flip-clock-wrapper ul {
-  /* Keep your existing widths, but prevent overflow nudging */
   max-width: 100%;
 }
 
-/* 4) Undo small offsets that were pushing it sideways on tiny screens */
+/* --- Remove small-screen offsets that cause “drift” --- */
 @media (max-width: 480px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0; } /* was 5px */
-  .flipTimebox .flip-clock-dot { margin-left: 0; }      /* was negative */
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; } /* was negative */
-}
-@media (max-width: 360px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0; }
-  .flipTimebox .flip-clock-dot { margin-left: 0; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; }
-}
-@media (max-width: 320px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0; }
-  .flipTimebox .flip-clock-dot { margin-left: 0; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0; }
+  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
+  .flipTimebox .flip-clock-dot { margin-left: 0 !important; left: 0 !important; }
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
+  .flipTimebox { padding-top: 40px; }     /* slightly tighter on very small screens */
 }
 
-/* Optional: keep some vertical breathing room around the clock, centered */
-.flipTimebox .clock.clock-fix {
-  margin: 1.5rem 0;  /* vertical only */
+/* Even tinier screens—keep everything centered and readable */
+@media (max-width: 360px) {
+  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
+  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
+}
+
+/* Safety net for the smallest devices */
+@media (max-width: 320px) {
+  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
+  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
+  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
+}
+
+@media (max-width: 360px) {
+  .flipTimebox .flip-clock-wrapper ul li a div div.inn {
+    font-size: 0.9em; /* small downscale without breaking layout */
+  }
 }
