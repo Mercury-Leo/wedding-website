@@ -273,3 +273,9 @@
   .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
   .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
 }
+
+.flipTimebox {
+  display: grid; place-items: center; width: 100%;
+  padding-inline: max(12px, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+.flipTimebox .flip-clock-wrapper { transform-origin: center top; will-change: transform; }
