@@ -165,7 +165,7 @@
   .flipTimebox .flip-clock-dot {
     margin-left: -18px;
   }
-    .flipTimebox .flip-clock-divider.days .flip-clock-label {
+  .flipTimebox .flip-clock-divider.days .flip-clock-label {
     right: 3px;
   }
   .flipTimebox .flip-clock-divider.hours .flip-clock-label {
@@ -180,102 +180,12 @@
 }
 
 .flip-clock-wrapper {
-  margin: 0 !important;
+  margin: 4em !important;
 }
 
 .flip-clock-divider .flip-clock-label {
   color: white !important;
   font-size: 14px !important;
   font-weight: bold !important;
-  font-family: Sofia Sans Condensed !important; 
+  font-family: Sofia Sans Condensed !important;
 }
-
-/* --- Hard center the clock everywhere --- */
-.flipTimebox {
-  display: grid;
-  place-items: center;               /* centers horizontally + vertically */
-  width: 100%;
-  padding-inline: 12px;              /* small side gutters on mobile */
-  padding-top: 48px;                 /* top spacing you want */
-  padding-bottom: 32px;
-  box-sizing: border-box;
-  overflow-x: hidden;                /* avoids tiny overflow nudges */
-}
-
-/* Let the plugin wrapper size to its content and stay centered */
-.flipTimebox .flip-clock-wrapper {
-  margin: 0 !important;      /* overrides the 4em margin */
-  width: max-content;         /* shrink-wrap to the clock’s width */
-}
-
-/* Avoid layout push from fixed widths—don’t exceed viewport */
-.flipTimebox .flip-clock-wrapper ul {
-  max-width: 100%;
-}
-
-/* --- Remove small-screen offsets that cause “drift” --- */
-@media (max-width: 480px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-  .flipTimebox { padding-top: 40px; }     /* slightly tighter on very small screens */
-}
-
-/* Even tinier screens—keep everything centered and readable */
-@media (max-width: 360px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-}
-
-/* Safety net for the smallest devices */
-@media (max-width: 320px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-}
-
-@media (max-width: 360px) {
-  .flipTimebox .flip-clock-wrapper ul li a div div.inn {
-    font-size: 0.9em; /* small downscale without breaking layout */
-  }
-}
-
-/* Let the plugin wrap to its content and stay centered */
-.flipTimebox .flip-clock-wrapper {
-  width: max-content;                /* shrink-wrap to clock width */
-}
-
-/* Avoid layout push from fixed widths—don’t exceed viewport */
-.flipTimebox .flip-clock-wrapper ul {
-  max-width: 100%;
-}
-
-/* --- Remove small-screen offsets that cause “drift” --- */
-@media (max-width: 480px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-  .flipTimebox { padding-top: 40px; }
-}
-
-/* Even tinier screens—keep everything centered and readable */
-@media (max-width: 360px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul li a div div.inn { font-size: 0.9em; }
-}
-
-/* Safety net for the smallest devices */
-@media (max-width: 320px) {
-  .flipTimebox .flip-clock-wrapper { padding-left: 0 !important; }
-  .flipTimebox .flip-clock-dot { margin-left: 0 !important; }
-  .flipTimebox .flip-clock-wrapper ul.flip { margin-left: 0 !important; }
-}
-
-.flipTimebox {
-  display: grid; place-items: center; width: 100%;
-  padding-inline: max(12px, env(safe-area-inset-left), env(safe-area-inset-right));
-}
-.flipTimebox .flip-clock-wrapper { transform-origin: center top; will-change: transform; }
