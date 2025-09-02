@@ -1939,4 +1939,3 @@ html[dir="rtl"] .event-wrap { direction: rtl; }
 .fh5co-cover, .display-t, .display-tc {
   overflow: visible;   /* remove any hidden overflow that might clip */
 }
-
