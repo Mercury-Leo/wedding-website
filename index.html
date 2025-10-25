@@ -188,6 +188,10 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<h2>Smiles</h2>
+
+					<div class="text-center" style="margin: 16px 0;">
+						<button type="button" class="btn btn-outline" id="randomPhotoBtn">עוד עלינו</button>
+					</div>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
@@ -252,6 +256,16 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+		<script src="js/random-meme.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				RandomPhoto.init({
+					folder: "images/memes",
+					manifest: "manifest.json",
+					fallback: ["meme1.jpg","meme2.jpg","meme3.jpg","meme4.jpg", "meme5.jpg","meme6.jpg","meme7.jpg","meme8.jpg","meme9.jpg","meme10.jpg","meme11.jpg","meme12.jpg","meme13.jpg","meme14.jpg","meme15.jpg","meme16.jpg","meme17.jpg"],
+				});
+			});
+		</script>
 	<center>Eden & Mercury </center>
 	</body>
 </html>
