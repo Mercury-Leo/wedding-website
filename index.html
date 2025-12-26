@@ -31,7 +31,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed" rel="stylesheet">
-	
+
 		<!-- clock   -->
 		<link rel="stylesheet" href="css/responsive-clock.css">
 		<!-- Animate.css -->
@@ -64,10 +64,31 @@
 		</style>
 
 	</head>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var questions = document.querySelectorAll('.faq-question');
+
+		questions.forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				var expanded = btn.getAttribute('aria-expanded') === 'true';
+				var answer = btn.nextElementSibling; // .faq-answer
+
+				btn.setAttribute('aria-expanded', String(!expanded));
+
+				if (!expanded) {
+					answer.hidden = false;
+				} else {
+					answer.hidden = true;
+				}
+			});
+		});
+	});
+</script>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 			<div class="container">
@@ -75,9 +96,9 @@
 
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
 							<li class="active"><a href="#fh5co-event">Location</a></li>
 							<li class="active"><a href="#fh5co-gallery">Smiles</a></li>
+							<li class="active"><a href="#fh5co-faq">Q&A</a></li>
 						</ul>
 					</div>
 				</div>
@@ -125,8 +146,6 @@
 			</div>
 		</div>
 	</header>
-
-
 
 		<div id="fh5co-event" class="fh5co-bg">
 			<div class="overlay"></div>
@@ -197,7 +216,7 @@
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
 					<ul id="fh5co-gallery-list">
-						
+
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/EM4.jpeg); ">
 						<a href="images/EM4.jpeg">
 							<div class="case-studies-summary">
@@ -217,13 +236,119 @@
 							</div>
 						</a>
 					</li>
-					
-					</ul>		
+
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
+		<div id="fh5co-faq" class="fh5co-section-gray" dir="rtl">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+						<h2>Questions &amp; Answers</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+						<div class="faq-list">
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">מה בתפריט?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>החתונה תהיה צמחונית. יהיו דגים, אופציות טבעוניות ואוכל טעים!</p>
+									<p>וכמובן שהכל כשר.</p>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">מה הלו"ז?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>19:00 קבלת פנים</p>
+									<p>20:00 חופה</p>
+									<p>21:00 באלגן!</p>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">יש חניה?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>כן, יש חניה במקום.</p>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">אין לי רכב, מה עושים?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>אם אתם מעוניינים בהסעה, סמנו את זה באישורי ההגעה וגם אפשר לענות על הסקר:</p>
+									<a href="https://forms.gle/ppGcEyuhoNS76SFc6">סקר הסעות</a>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">איך מזג האוויר?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>אנא עארף, חורף בישראל.</p>
+									<p>אם לא יהיה קר מדי, קבלת פנים בחוץ.</p>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">צילמתי מלא תמונות שוות מהאירוע! איך משתפים?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<a href="https://photos.google.com/share/AF1QipOG_8ubzVDXDKav_T12zcfnDaVyYHIuQxMF8p485f0kHgVpaTQFASQ3gyo10h1mqg?key=NkF1UXFhem5rWHppdDBsOWlsT1BmLWtidlNsWjh3">לחצו כאן על מנת להעלות את כל התמונות לאלבום שלנו!</a>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">האם מורגנה תהיה? אני ממש רוצה ללטף אותה!</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>לא. מוזמנים לבקר אותה בסביבה הטבעית שלה.</p>
+								</div>
+							</div>
+
+							<div class="faq-item">
+								<button class="faq-question" aria-expanded="false">
+									<span class="faq-q-text">איך אפשר להעביר מתנה לזוג?</span>
+									<span class="faq-arrow" aria-hidden="true">▾</span>
+								</button>
+								<div class="faq-answer" hidden>
+									<p>ניתן להעביר בביט או פייבוקס</p>
+									<p>חתן</p>
+									<a href="https://www.bitpay.co.il/app/me/FFAFECA7-DC78-A507-14CA-BEFF2B6F9ADDC8FA">לחצאו כאן לביט</a>
+									<p>כלה</p>
+									<a href="https://www.bitpay.co.il/app/me/68F34672-CB89-3BCC-4D43-91D76D305B5AF531">לחצאו כאן לביט</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -266,6 +391,6 @@
 				});
 			});
 		</script>
-	<center>Eden & Mercury </center>
+	<center>Eden & Mercury 12.2.26</center>
 	</body>
 </html>
