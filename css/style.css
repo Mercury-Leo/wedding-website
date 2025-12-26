@@ -8,7 +8,7 @@
 @font-face { font-family: Amsterdam; src: url('../fonts/AmsterdamOne.ttf'); }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -1930,3 +1930,90 @@ html, body {
   #fh5co-event { padding: 6em 0 !important; }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* FAQ (Questions & Answers) */
+.faq-list {
+  margin-top: 10px;
+}
+
+.faq-item {
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border-color: mediumpurple;
+  background: rgba(255, 255, 255, 0.75);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  font-family: "Sofia Sans Condensed", Arial, sans-serif;
+  font-size: 22px;
+  color: #111;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-question:focus-visible {
+  box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.35);
+}
+
+.faq-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* rotate arrow when expanded */
+.faq-question[aria-expanded="true"] .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 18px 16px 18px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Sofia Sans Condensed", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.faq-answer p {
+  margin: 10px 0 0 0;
+}
+
+/* Mobile sizing */
+@media (max-width: 768px) {
+  .faq-question { font-size: 18px; padding: 14px 14px; }
+  .faq-answer { font-size: 18px; padding: 0 14px 14px 14px; }
+}
+
+/* FAQ RTL */
+#fh5co-faq {
+  direction: rtl;
+  text-align: right;
+}
+
+#fh5co-faq .faq-question {
+  text-align: right; /* button text alignment */
+}
+
+#fh5co-faq .faq-question .faq-q-text {
+  text-align: right;
+}
+
+/* Make sure arrow stays on the "other side" nicely in RTL */
+#fh5co-faq .faq-arrow {
+  margin-right: 12px;
+  margin-left: 0;
+}
