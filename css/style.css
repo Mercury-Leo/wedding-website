@@ -2017,3 +2017,62 @@ html, body {
   margin-right: 12px;
   margin-left: 0;
 }
+
+/* Spotify section spacing */
+#spotify {
+  padding: 3em 0;              /* top + bottom */
+}
+
+/* Optional: a bit tighter on phones */
+@media (max-width: 768px) {
+  #spotify {
+    padding: 2em 0;
+  }
+}
+
+#randomPhotoBtn {
+  border-radius: 999px;
+  padding: 20px 22px;
+  margin: 40px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgba(100, 100, 100, 0.35);
+  color: #333;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+#randomPhotoBtn::after {
+  content: "✨";
+  margin-right: 10px;
+  display: inline-block;
+  transform: translateY(1px);
+  animation: btnSparkle 1.4s ease-in-out infinite;
+}
+
+#randomPhotoBtn::before {
+  content: "✨";
+  margin-left: 10px;     /* space between emoji and text (RTL) */
+  display: inline-block;
+  transform: translateY(1px);
+  animation: btnSparkle 1.4s ease-in-out infinite;
+}
+
+@keyframes btnSparkle {
+  0%, 100% { transform: translateY(1px) rotate(0deg); opacity: .75; }
+  50% { transform: translateY(-2px) rotate(10deg); opacity: 1; }
+}
+
+#randomPhotoBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+#randomPhotoBtn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+#randomPhotoBtn {
+  font-weight: 700; /* bold */
+}
